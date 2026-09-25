@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A tiny task board for the GitHub Dev Days Copilot CLI demo." />
+    <title>Dev Days Task Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">GitHub Dev Days 2026</p>
+          <h1>Workshop Task Board</h1>
+          <p class="subtitle">Keep the session moving, one clear task at a time.</p>
+        </div>
+        <div class="status" aria-label="Workshop status">
+          <span class="status-dot"></span>
+          Demo ready
+        </div>
+      </header>
+
+      <section class="board" aria-labelledby="board-title">
+        <div class="board-heading">
+          <div>
+            <p class="section-label">TODAY'S CHECKLIST</p>
+            <h2 id="board-title">Session tasks</h2>
+          </div>
+          <p class="task-count" aria-live="polite"><strong id="remaining-count">2</strong> remaining</p>
+        </div>
+
+        <form id="task-form" class="task-form" novalidate>
+          <label for="task-title">What needs to be done?</label>
+          <div class="input-row">
+            <input
+              id="task-title"
+              name="taskTitle"
+              type="text"
+              autocomplete="off"
+              placeholder="Example: Check the projector"
+            />
+            <button type="submit" class="primary-button">
+              <span aria-hidden="true">+</span>
+              Add task
+            </button>
+          </div>
+          <p id="task-error" class="error-message" role="alert" aria-live="assertive" hidden></p>
+        </form>
+
+        <ul id="task-list" class="task-list" aria-label="Workshop tasks">
+          <li class="task-item">
+            <label>
+              <input class="task-checkbox" type="checkbox" />
+              <span class="custom-checkbox" aria-hidden="true"></span>
+              <span class="task-text">Open the presentation</span>
+            </label>
+            <button class="delete-button" type="button" aria-label="Delete Open the presentation">Delete</button>
+          </li>
+          <li class="task-item">
+            <label>
+              <input class="task-checkbox" type="checkbox" />
+              <span class="custom-checkbox" aria-hidden="true"></span>
+              <span class="task-text">Test the demo repository</span>
+            </label>
+            <button class="delete-button" type="button" aria-label="Delete Test the demo repository">Delete</button>
+          </li>
+        </ul>
+
+        <div id="empty-state" class="empty-state" hidden>
+          <div class="empty-icon" aria-hidden="true">✓</div>
+          <h3>Everything is ready</h3>
+          <p>Add a task if something else comes up.</p>
+        </div>
+
+        <footer class="board-footer">
+          <span>Changes stay in this browser tab</span>
+          <button id="clear-completed" class="text-button" type="button">Clear completed</button>
+        </footer>
+      </section>
+
+      <p class="demo-hint">Try adding a task that contains only spaces.</p>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

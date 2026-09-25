@@ -1,0 +1,14 @@
+{
+  "name": "dev-days-task-board",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A beginner-friendly GitHub Copilot CLI workshop demo",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
